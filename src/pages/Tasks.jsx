@@ -6,10 +6,11 @@ import { DeleteOutlined , PlusOutlined } from '@ant-design/icons';
 
 const Tasks = () => {
   const [tasks,setTasks] = useState([])
+  const API = import.meta.env.VITE_API_URL;
 
   const deleteTask = async (id) =>{
         try{
-            const {data} = await axios.delete(`/api/tasks/delete-task/${id}`)
+            const {data} = await axios.delete(`${API}/api/tasks/delete-task/${id}`)
 
             if(data && data.success){
                 toast.success(data.message)
@@ -25,7 +26,7 @@ const Tasks = () => {
 
   const getAllTasks = async () => {
     try{
-      const {data} = await axios.get("/api/tasks/all-tasks")
+      const {data} = await axios.get(`${API}/api/tasks/all-tasks`)
       if(data && data.success){
           setTasks(data.tasks)
           console.log(tasks)

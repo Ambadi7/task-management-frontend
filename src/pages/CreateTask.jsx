@@ -31,12 +31,12 @@ const CreateTask = () => {
   const [days,setDays] = useState([])
   const [repeat,setRepeat] = useState("Every Week")
   const [tag,setTag] = useState("")
-
+  const API = import.meta.env.VITE_API_URL;
   const navigate = useNavigate()
   const handleCreate = async(e) =>{
     e.preventDefault()
     try {
-    const { data } = await axios.post("/api/tasks/create-task", {
+    const { data } = await axios.post(`${API}/api/tasks/create-task`, {
     name,
     description,
     status,

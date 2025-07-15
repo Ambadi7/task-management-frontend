@@ -8,10 +8,10 @@ import { toast } from 'sonner'
 
 const Dashboard = () => {
   const [tasks,setTasks] = useState([])
-  console.log(tasks)
+  const API = import.meta.env.VITE_API_URL;
   const getAllTasks = async () => {
     try{
-      const {data} = await axios.get("/api/tasks/all-tasks")
+      const {data} = await axios.get(`${API}/api/tasks/all-tasks`)
       if(data && data.success){
           setTasks(data.tasks)
           console.log(tasks)

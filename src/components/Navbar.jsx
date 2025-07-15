@@ -10,11 +10,12 @@ const Navbar = () => {
     const [extendNavbar,setExtendNavbar] = useState(false)
     const {auth,setAuth} = useContext(AuthContext)
     const navigate = useNavigate()
+    const API = import.meta.env.VITE_API_URL;
 
     const handleLogout = async (e) =>{
         e.preventDefault()
         try{
-            const {data} = await axios.post("/api/auth/logout")
+            const {data} = await axios.post(`${API}/api/auth/logout`)
             if(data.success){
                 setAuth({...auth,user:null,token:""})
                 localStorage.removeItem("auth")

@@ -9,6 +9,7 @@ const Task = () => {
   const params = useParams()
   console.log(params)
   const navigate = useNavigate()
+  const API = import.meta.env.VITE_API_URL;
 
   useEffect(() =>{
     getTask()
@@ -16,7 +17,7 @@ const Task = () => {
   
   const deleteTask = async (id) =>{
         try{
-            const {data} = await axios.delete(`/api/tasks/delete-task/${id}`)
+            const {data} = await axios.delete(`${API}/api/tasks/delete-task/${id}`)
 
             if(data && data.success){
                 toast.success(data.message)
@@ -32,7 +33,7 @@ const Task = () => {
 
   const getTask = async () => {
     try{
-      const {data} = await axios.get(`/api/tasks/single-task/${params.slug}`)
+      const {data} = await axios.get(`${API}/api/tasks/single-task/${params.slug}`)
       if(data && data.success){
           setTask(data.task)
           

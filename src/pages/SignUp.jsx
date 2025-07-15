@@ -10,12 +10,13 @@ const SignUp = () => {
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
     const navigate = useNavigate()
+    const API = import.meta.env.VITE_API_URL;
     const handleSubmit =async(e)=>{
       e.preventDefault()
       console.log(name,email,password)
       
       try{
-        const{data}= await axios.post("/api/auth/signup",{name,email,password})
+        const{data}= await axios.post(`${API}/api/auth/signup`,{name,email,password})
         
         if(data.success){
           toast.success(data.message)

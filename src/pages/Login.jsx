@@ -13,11 +13,12 @@ const Login = () => {
   const navigate = useNavigate()
   const {auth,setAuth} = useContext(AuthContext)
   const location = useLocation()
+  const API = import.meta.env.VITE_API_URL;
 
   const handleSubmit =  async (e)  =>{
     e.preventDefault()
      try{
-      const { data } = await axios.post("/api/auth/login",{email, password})
+      const { data } = await axios.post(`${API}/api/auth/login`,{email, password})
       
       if (data.success){
         toast.success(data.message)
