@@ -5,7 +5,6 @@ import SignUp from "./pages/SignUp"
 import Dashboard from "./pages/Dashboard"
 import Tasks from "./pages/Tasks"
 import CreateTask from "./pages/CreateTask"
-import UpdateTask from "./pages/UpdateTask"
 import Task from "./pages/Task"
 import PrivateRoute from "./components/routes/PrivateRoute"
 import ErrorPage from "./pages/ErrorPage"
@@ -25,7 +24,6 @@ function App() {
             <Route path="tasks" element={<Tasks/>}/>
             <Route path="task/:slug" element={<Task/>}/>
             <Route path="create-task" element={<CreateTask/>}/>
-            <Route path="update-task" element={<UpdateTask/>}/>
           </Route>
           <Route path="*" element={<ErrorPage/>}/>
         </Route>
