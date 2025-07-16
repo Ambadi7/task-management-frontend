@@ -49,13 +49,13 @@ const SignUp = () => {
           </div>
           <div className='w-full md:w-2/6 flex gap-5 items-center justify-center py-5'>
               <div className='rounded-full bg-white p-2 '>
-                <img className='h-6' src="/src/assets/facebook-logo.png" alt="" />
+                <img className='h-6' src="/public/images/facebook-logo.png" alt="" />
               </div>
               <div className='rounded-full bg-white p-2 '>
-                <img className='h-6' src="/src/assets/google-logo.png" alt="" />
+                <img className='h-6' src="/public/images/google-logo.png" alt="" />
               </div>
               <div className='rounded-full bg-white p-2 '>
-                <img className='h-6' src="/src/assets/apple-logo.png" alt="" />
+                <img className='h-6' src="/public/images/apple-logo.png" alt="" />
               </div>
           </div>
 
