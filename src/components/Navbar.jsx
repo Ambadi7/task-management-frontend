@@ -49,7 +49,7 @@ const Navbar = () => {
           <ul className={`items-stretch  space-x-6  md:flex ${extendNavbar ? "flex flex-col gap-10 " : ""}`}>
             <li><MoonOutlined /></li>
             <li><BellOutlined /></li>
-            <li onClick={handleLogout}>Log Out</li>
+            <li><button onClick={handleLogout}> Log Out</button></li> 
           </ul>
         }
         
