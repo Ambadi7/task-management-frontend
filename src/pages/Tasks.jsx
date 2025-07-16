@@ -44,32 +44,47 @@ const Tasks = () => {
 },[])
   return (
     <div>
-      <div>
-        <h1 className='text-xl font-bold'>Tasks</h1>
-      </div>
-      <div className='flex flex-col gap-2 p-2'>
-        {
-          tasks.map((item) => {
-            return(
-              <div className='flex '>
-                <Link to={`/dashboard/task/${item.slug}`} key={item._id} className={`flex items-center px-7 ${item.cardColor} h-14 w-full rounded-l-lg justify-between`}>
-                <h1 className=' text-lg'>{item.name}</h1> 
-              </Link>
-                <button className={`p-4 ${item.cardColor} rounded-r-lg`} onClick={()=> { deleteTask(item._id)}}><DeleteOutlined /></button>
-              </div>
-              
-            )
-          })
-        }
-      </div>
-      <Link to={"/dashboard/create-task"}>
-        <button
-        className="fixed bottom-12 right-12 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
-        aria-label="Add"
-        >
-        <PlusOutlined />
-      </button>
-      </Link>
+      {
+        !tasks ?
+        <div>
+          <h1>Add your Task </h1>
+          <button
+            className=" h-12 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 transition duration-300"
+            aria-label="Add"
+            >Add Your Task
+            <PlusOutlined />
+          </button>
+        </div>
+        : 
+        <div>
+          <div>
+            <h1 className='text-xl font-bold'>Tasks</h1>
+          </div>
+          <div className='flex flex-col gap-2 p-2'>
+            {
+              tasks.map((item) => {
+                return(
+                  <div className='flex '>
+                    <Link to={`/dashboard/task/${item.slug}`} key={item._id} className={`flex items-center px-7 ${item.cardColor} h-14 w-full rounded-l-lg justify-between`}>
+                    <h1 className=' text-lg'>{item.name}</h1> 
+                  </Link>
+                    <button className={`p-4 ${item.cardColor} rounded-r-lg`} onClick={()=> { deleteTask(item._id)}}><DeleteOutlined /></button>
+                  </div>
+                  
+                )
+              })
+            }
+          </div>
+          <Link to={"/dashboard/create-task"}>
+            <button
+            className="fixed bottom-12 right-12 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+            aria-label="Add"
+            >
+            <PlusOutlined />
+          </button>
+          </Link>
+        </div>
+      }
     </div>
   )
 }
