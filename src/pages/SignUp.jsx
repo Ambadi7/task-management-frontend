@@ -77,7 +77,7 @@ const SignUp = () => {
               />
             </div>
 
-            <div className='bg-white w-full md:w-3/6 p-3 rounded-xl'>
+            <div  className='bg-white w-full md:w-3/6 p-3 rounded-xl'>
               <input
               className=' outline-none border-b border-gray-400 w-full'
               type="password" placeholder='password' required
