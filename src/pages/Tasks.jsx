@@ -91,13 +91,16 @@ const Tasks = () => {
   {!tasks || tasks.length === 0 ? (
     <div>
       <h1>Add your Task</h1>
-      <button
+      <Link to="/dashboard/create-task">
+        <button
         className="px-4 h-12 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 transition duration-300"
         aria-label="Add"
-      >
+        >
         Add Your Task
         <PlusOutlined />
-      </button>
+        </button>
+      </Link>
+      
     </div>
   ) : (
     <div>
