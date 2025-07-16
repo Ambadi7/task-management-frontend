@@ -92,7 +92,7 @@ const Tasks = () => {
     <div>
       <h1>Add your Task</h1>
       <button
-        className="h-12 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 transition duration-300"
+        className="px-4 h-12 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 transition duration-300"
         aria-label="Add"
       >
         Add Your Task
